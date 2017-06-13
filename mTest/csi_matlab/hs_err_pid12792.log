@@ -1,0 +1,238 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 40624 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:323), pid=12792, tid=5056
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_60-b19) (build 1.7.0_60-b19)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.60-b09 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000000ae78800):  JavaThread "AWT-EventQueue-0" [_thread_in_native, id=5056, stack(0x000000000b810000,0x000000000b910000)]
+
+Stack: [0x000000000b810000,0x000000000b910000]
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.ClassLoader.findBootstrapClass(Ljava/lang/String;)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.findBootstrapClassOrNull(Ljava/lang/String;)Ljava/lang/Class;+12
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+48
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+38
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+36
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+v  ~StubRoutines::call_stub
+j  java.lang.Class.forName0(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;+0
+j  java.lang.Class.forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;+35
+j  sun.font.FontManagerFactory$1.run()Ljava/lang/Object;+16
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;+0
+j  sun.font.FontManagerFactory.getInstance()Lsun/font/FontManager;+17
+j  java.awt.Font.getFont2D()Lsun/font/Font2D;+0
+j  java.awt.Font.access$000(Ljava/awt/Font;)Lsun/font/Font2D;+1
+j  java.awt.Font$FontAccessImpl.getFont2D(Ljava/awt/Font;)Lsun/font/Font2D;+1
+j  sun.font.FontUtilities.getFont2D(Ljava/awt/Font;)Lsun/font/Font2D;+4
+j  sun.font.FontUtilities.fontSupportsDefaultEncoding(Ljava/awt/Font;)Z+1
+j  com.sun.java.swing.plaf.windows.WindowsLookAndFeel$WindowsFontProperty.configureValue(Ljava/lang/Object;)Ljava/lang/Object;+146
+j  com.sun.java.swing.plaf.windows.DesktopProperty.createValue(Ljavax/swing/UIDefaults;)Ljava/lang/Object;+13
+j  javax.swing.UIDefaults.getFromHashtable(Ljava/lang/Object;)Ljava/lang/Object;+231
+j  javax.swing.UIDefaults.get(Ljava/lang/Object;)Ljava/lang/Object;+2
+j  javax.swing.MultiUIDefaults.get(Ljava/lang/Object;)Ljava/lang/Object;+45
+j  javax.swing.UIDefaults.getFont(Ljava/lang/Object;)Ljava/awt/Font;+2
+j  javax.swing.UIManager.getFont(Ljava/lang/Object;)Ljava/awt/Font;+4
+j  com.mathworks.mwswing.FontUtils.getWindowsCJKDefaultFont()Ljava/awt/Font;+46
+j  com.mathworks.mwswing.FontUtils.getWindowsSystemFont()Ljava/awt/Font;+28
+j  com.mathworks.mwswing.FontUtils.getSystemUIFont()Ljava/awt/Font;+24
+j  com.mathworks.mwswing.plaf.PlafUtils.correctWindowsFonts()V+0
+j  com.mathworks.mwswing.plaf.PlafUtils.correctWindowsLookAndFeel()V+3
+j  com.mathworks.mwswing.plaf.PlafUtils.correctPlatformLookAndFeel()V+18
+j  com.mathworks.mwswing.plaf.PlafUtils.setLookAndFeel()V+72
+j  com.mathworks.fatalexit.FatalExitFrame.doMatlabLikeSetup()V+3
+j  com.mathworks.fatalexit.FatalExitFrame.access$1400()V+0
+j  com.mathworks.fatalexit.FatalExitFrame$13.run()V+107
+j  java.awt.event.InvocationEvent.dispatch()V+47
+j  java.awt.EventQueue.dispatchEventImpl(Ljava/awt/AWTEvent;Ljava/lang/Object;)V+21
+j  java.awt.EventQueue.access$200(Ljava/awt/EventQueue;Ljava/awt/AWTEvent;Ljava/lang/Object;)V+3
+j  java.awt.EventQueue$3.run()Ljava/lang/Void;+12
+j  java.awt.EventQueue$3.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.security.ProtectionDomain$1.doIntersectionPrivilege(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;Ljava/security/AccessControlContext;)Ljava/lang/Object;+28
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+46
+j  java.awt.EventDispatchThread.pumpOneEventForFilters(I)V+245
+j  java.awt.EventDispatchThread.pumpEventsForFilter(ILjava/awt/Conditional;Ljava/awt/EventFilter;)V+35
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+11
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000000316d800 JavaThread "DestroyJavaVM" [_thread_blocked, id=216, stack(0x0000000003040000,0x0000000003140000)]
+=>0x000000000ae78800 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=5056, stack(0x000000000b810000,0x000000000b910000)]
+  0x000000000af42800 JavaThread "AWT-Windows" daemon [_thread_in_native, id=10004, stack(0x000000000b620000,0x000000000b720000)]
+  0x000000000af41800 JavaThread "AWT-Shutdown" [_thread_blocked, id=13108, stack(0x000000000b520000,0x000000000b620000)]
+  0x000000000ae84800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=12596, stack(0x000000000b420000,0x000000000b520000)]
+  0x00000000093bf000 JavaThread "Service Thread" daemon [_thread_blocked, id=4456, stack(0x000000000ab30000,0x000000000ac30000)]
+  0x00000000093bc800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=7928, stack(0x000000000aa30000,0x000000000ab30000)]
+  0x00000000093ba800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=4092, stack(0x000000000a930000,0x000000000aa30000)]
+  0x00000000093b6000 JavaThread "Attach Listener" daemon [_thread_blocked, id=12812, stack(0x000000000a830000,0x000000000a930000)]
+  0x00000000093b3800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=8280, stack(0x000000000a730000,0x000000000a830000)]
+  0x000000000936e800 JavaThread "Finalizer" daemon [_thread_blocked, id=11108, stack(0x000000000a630000,0x000000000a730000)]
+  0x0000000009365800 JavaThread "Reference Handler" daemon [_thread_blocked, id=4728, stack(0x000000000a530000,0x000000000a630000)]
+
+Other Threads:
+  0x0000000009361800 VMThread [stack: 0x000000000a430000,0x000000000a530000] [id=7256]
+  0x00000000093d6000 WatcherThread [stack: 0x000000000ac30000,0x000000000ad30000] [id=8784]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 18944K, used 3973K [0x00000000eb500000, 0x00000000eca00000, 0x0000000100000000)
+  eden space 16384K, 24% used [0x00000000eb500000,0x00000000eb8e1730,0x00000000ec500000)
+  from space 2560K, 0% used [0x00000000ec780000,0x00000000ec780000,0x00000000eca00000)
+  to   space 2560K, 0% used [0x00000000ec500000,0x00000000ec500000,0x00000000ec780000)
+ ParOldGen       total 41984K, used 0K [0x00000000c2000000, 0x00000000c4900000, 0x00000000eb500000)
+  object space 41984K, 0% used [0x00000000c2000000,0x00000000c2000000,0x00000000c4900000)
+ PSPermGen       total 21504K, used 6208K [0x00000000bce00000, 0x00000000be300000, 0x00000000c2000000)
+  object space 21504K, 28% used [0x00000000bce00000,0x00000000bd410158,0x00000000be300000)
+
+Card table byte_map: [0x0000000006700000,0x0000000006920000] byte_map_base: 0x0000000006119000
+
+Polling page: 0x0000000001480000
+
+Code Cache  [0x0000000003640000, 0x00000000038b0000, 0x0000000006640000)
+ total_blobs=298 nmethods=7 adapters=244 free_code_cache=48703Kb largest_free_block=49859136
+
+Compilation events (10 events):
+Event: 0.943 Thread 0x00000000093ba800    3             java.lang.String::indexOf (70 bytes)
+Event: 0.944 Thread 0x00000000093ba800 nmethod 3 0x000000000369fb90 code [0x000000000369fce0, 0x000000000369fe68]
+Event: 1.964 Thread 0x00000000093bc800    4             sun.misc.ASCIICaseInsensitiveComparator::compare (126 bytes)
+Event: 1.967 Thread 0x00000000093bc800 nmethod 4 0x00000000036a3710 code [0x00000000036a3860, 0x00000000036a3bd8]
+Event: 2.601 Thread 0x00000000093ba800    5             sun.nio.cs.UTF_8$Encoder::encode (361 bytes)
+Event: 2.611 Thread 0x00000000093ba800 nmethod 5 0x00000000036a5a10 code [0x00000000036a5b60, 0x00000000036a6048]
+Event: 3.736 Thread 0x00000000093bc800    6             java.lang.Object::<init> (1 bytes)
+Event: 3.737 Thread 0x00000000093bc800 nmethod 6 0x00000000036b1b10 code [0x00000000036b1c40, 0x00000000036b1cb8]
+Event: 4.319 Thread 0x00000000093ba800    7             java.lang.String::lastIndexOf (52 bytes)
+Event: 4.324 Thread 0x00000000093ba800 nmethod 7 0x00000000036af5d0 code [0x00000000036af720, 0x00000000036af888]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 4.211 Thread 0x000000000ae78800 Threw 0x00000000eb87edc8 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 4.211 Thread 0x000000000ae78800 Threw 0x00000000eb882e88 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 4.239 Thread 0x000000000ae78800 Threw 0x00000000eb886768 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 4.314 Thread 0x000000000ae78800 Threw 0x00000000eb892428 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:3730
+Event: 4.314 Thread 0x000000000ae78800 Threw 0x00000000eb892428 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jni.cpp:717
+Event: 4.315 Thread 0x000000000ae78800 Threw 0x00000000eb892f68 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 4.316 Thread 0x000000000ae78800 Threw 0x00000000eb89c218 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 4.317 Thread 0x000000000ae78800 Threw 0x00000000eb89f4f8 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 4.319 Thread 0x000000000ae78800 Threw 0x00000000eb8a2f98 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+Event: 4.350 Thread 0x000000000ae78800 Threw 0x00000000eb8aef08 at C:\re\jdk7u60\1081\hotspot\src\share\vm\prims\jvm.cpp:1244
+
+Events (10 events):
+Event: 4.370 loading class 0x000000000adcf9d0
+Event: 4.381 loading class 0x000000000adcf9d0 done
+Event: 4.381 loading class 0x000000000ade3600
+Event: 4.381 loading class 0x000000000ade3600 done
+Event: 4.385 loading class 0x000000000ad35460
+Event: 4.386 loading class 0x000000000ad35460 done
+Event: 4.386 loading class 0x000000000ade3a90
+Event: 4.386 loading class 0x000000000ade3a90 done
+Event: 4.386 loading class 0x000000000af8e960
+Event: 4.391 loading class 0x000000000ad35490
+
+
+Dynamic libraries:
+0x00007ff65e2c0000 - 0x00007ff65e2f3000 	E:\MATLAB\sys\java\jre\win64\jre\bin\java.exe
+0x00007fffe9c00000 - 0x00007fffe9dd1000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fffe85c0000 - 0x00007fffe866b000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fffe63c0000 - 0x00007fffe65dd000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fffe4440000 - 0x00007fffe44ba000 	C:\WINDOWS\system32\apphelp.dll
+0x00007fffe8240000 - 0x00007fffe82e2000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007fffe7280000 - 0x00007fffe731e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fffe7d10000 - 0x00007fffe7d69000 	C:\WINDOWS\System32\sechost.dll
+0x00007fffe7540000 - 0x00007fffe7661000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fffe7390000 - 0x00007fffe74f5000 	C:\WINDOWS\System32\USER32.dll
+0x00007fffe62f0000 - 0x00007fffe630e000 	C:\WINDOWS\System32\win32u.dll
+0x00007fffe7500000 - 0x00007fffe7534000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fffe6fe0000 - 0x00007fffe7162000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fffdb7e0000 - 0x00007fffdba59000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.14393.447_none_42191651c6827bb3\COMCTL32.dll
+0x00007fffe82f0000 - 0x00007fffe85b7000 	C:\WINDOWS\System32\combase.dll
+0x00007fffe6130000 - 0x00007fffe6225000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007fffe6230000 - 0x00007fffe629a000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007fffe8110000 - 0x00007fffe813e000 	C:\WINDOWS\System32\IMM32.DLL
+0x000000005dba0000 - 0x000000005dc72000 	E:\MATLAB\sys\java\jre\win64\jre\bin\msvcr100.dll
+0x0000000062a10000 - 0x00000000631e2000 	E:\MATLAB\sys\java\jre\win64\jre\bin\server\jvm.dll
+0x00007fffe7670000 - 0x00007fffe7678000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007fffd49a0000 - 0x00007fffd49a9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007fffe4520000 - 0x00007fffe4543000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fffe7320000 - 0x00007fffe738a000 	C:\WINDOWS\System32\ws2_32.DLL
+0x0000000001450000 - 0x000000000147b000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007fffe62a0000 - 0x00007fffe62e2000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x0000000062a00000 - 0x0000000062a0f000 	E:\MATLAB\sys\java\jre\win64\jre\bin\verify.dll
+0x00000000629d0000 - 0x00000000629f8000 	E:\MATLAB\sys\java\jre\win64\jre\bin\java.dll
+0x00000000629b0000 - 0x00000000629c5000 	E:\MATLAB\sys\java\jre\win64\jre\bin\zip.dll
+0x00000000627c0000 - 0x0000000062955000 	E:\MATLAB\sys\java\jre\win64\jre\bin\awt.dll
+0x00007fffe7ab0000 - 0x00007fffe7b6f000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007fffe65e0000 - 0x00007fffe667c000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007fffe47a0000 - 0x00007fffe4835000 	C:\WINDOWS\system32\uxtheme.dll
+0x00007fffe7d80000 - 0x00007fffe7edb000 	C:\WINDOWS\System32\MSCTF.dll
+0x00007fffcec90000 - 0x00007fffcecd9000 	C:\Program Files (x86)\TeamViewer\tv_x64.dll
+0x00007fffe86f0000 - 0x00007fffe9bf9000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007fffe6900000 - 0x00007fffe6fda000 	C:\WINDOWS\System32\windows.storage.dll
+0x00007fffe6060000 - 0x00007fffe60ac000 	C:\WINDOWS\System32\powrprof.dll
+0x00007fffe7f40000 - 0x00007fffe7f92000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007fffe6050000 - 0x00007fffe605f000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00007fffe6850000 - 0x00007fffe68f9000 	C:\WINDOWS\System32\shcore.dll
+0x00007fffe60b0000 - 0x00007fffe60c4000 	C:\WINDOWS\System32\profapi.dll
+0x00007fffe7fd0000 - 0x00007fffe8107000 	C:\WINDOWS\System32\ole32.dll
+0x00007fffd9e10000 - 0x00007fffd9e1a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fffe4410000 - 0x00007fffe4436000 	C:\WINDOWS\system32\dwmapi.dll
+
+VM Arguments:
+java_command: com.mathworks.fatalexit.FatalExitFrame C:\Users\ADMINI~1\AppData\Local\Temp\matlab_crash_dump.8968-1
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=E:\MATLAB\bin\win64;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;E:\MATLAB\runtime\win64;E:\MATLAB\bin;E:\MATLAB\polyspace\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;E:\python;E:\python\Scripts;E:\python\Library\bin;C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\Administrator\AppData\Local\Programs\Python\Python36\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;C:\Program Files (x86)\Microsoft VS Code\bin
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, erms, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 4063120k(314656k free), swap 16646032k(2536k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (24.60-b09) for windows-amd64 JRE (1.7.0_60-b19), built on May  7 2014 12:55:18 by "java_re" with unknown MS VC++:1600
+
+time: Thu Mar 30 15:28:57 2017
+elapsed time: 4 seconds
+
